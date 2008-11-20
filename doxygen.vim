@@ -81,7 +81,9 @@ try
       let g:doxygen_end_punctuation='[.]'
     endif
 
-    exe 'syn region doxygenBrief contained start=+[\\@]\([npcbea]\>\|em\>\|ref\>\|link\>\|f\$\|[$\\&<>#]\)\|[^ \t\\@*]+ start=+\(^\s*\)\@<!\*/\@!+ start=+\<\k+ skip=+'.doxygen_end_punctuation.'\S\@=+ end=+'.doxygen_end_punctuation.'+ end=+\(\s*\(\n\s*\*\=\s*\)[@\\]\([npcbea]\>\|em\>\|ref\>\|link\>\|f\$\|[$\\&<>#]\)\@!\)\@=+ contains=doxygenSmallSpecial,doxygenContinueComment,doxygenBriefEndComment,doxygenFindBriefSpecial,doxygenSmallSpecial,@doxygenHtmlGroup,doxygenTODO,doxygenHyperLink,doxygenHashLink,@Spell  skipnl nextgroup=doxygenBody'
+    " removed nextgroup=doxygenBody at the end. It made brief
+    " description stop after the first sentence
+    exe 'syn region doxygenBrief contained start=+[\\@]\([npcbea]\>\|em\>\|ref\>\|link\>\|f\$\|[$\\&<>#]\)\|[^ \t\\@*]+ start=+\(^\s*\)\@<!\*/\@!+ start=+\<\k+ skip=+'.doxygen_end_punctuation.'\S\@=+ end=+'.doxygen_end_punctuation.'+ end=+\(\s*\(\n\s*\*\=\s*\)[@\\]\([npcbea]\>\|em\>\|ref\>\|link\>\|f\$\|[$\\&<>#]\)\@!\)\@=+ contains=doxygenSmallSpecial,doxygenContinueComment,doxygenBriefEndComment,doxygenFindBriefSpecial,doxygenSmallSpecial,@doxygenHtmlGroup,doxygenTODO,doxygenHyperLink,doxygenHashLink,@Spell  skipnl'
 
     syn match doxygenBriefEndComment +\*/+ contained
 
@@ -98,7 +100,8 @@ try
   " This helps with sync-ing as for some reason, syncing behaves differently to a normal region, and the start pattern does not get matched.
   syn match doxygenSyncStart +\ze[^*/]+ contained nextgroup=doxygenBrief,doxygenPrev,doxygenStartSpecial,doxygenFindBriefSpecial,doxygenStartSkip,doxygenPage skipwhite skipnl
 
-  syn region doxygenBriefLine contained start=+\<\k+ end=+\(\n\s*\*\=\s*\([@\\]\([npcbea]\>\|em\>\|ref\>\|link\>\|f\$\|[$\\&<>#]\)\@!\)\|\s*$\)\@=+ contains=doxygenContinueComment,doxygenFindBriefSpecial,doxygenSmallSpecial,@doxygenHtmlGroup,doxygenTODO,doxygenHyperLink,doxygenHashLink  skipwhite keepend
+  " These allow the skipping of comment continuation '*' characters.
+  syn match doxygenContinueComment        contained +^\s*\*/\@!\s*+ nextgroup=doxygenSpecial
 
   " Match a '<' for applying a comment to the previous element.
   syn match doxygenPrev +<+ contained nextgroup=doxygenBrief,doxygenBody,doxygenSpecial,doxygenStartSkip skipwhite
@@ -122,9 +125,6 @@ endif
   " The main body of a doxygen comment.
   syn region doxygenBody contained start=+\(/\*[*!]\)\@<!<\|[^<]\|$+ matchgroup=doxygenEndComment end=+\*/+re=e-2,me=e-2 contains=doxygenContinueComment,doxygenTODO,doxygenSpecial,doxygenSmallSpecial,doxygenHyperLink,doxygenHashLink,@doxygenHtmlGroup,@Spell
 
-  " These allow the skipping of comment continuation '*' characters.
-  syn match doxygenContinueComment contained +^\s*\*/\@!\s*+
-
   " Catch a Brief comment without punctuation - flag it as an error but
   " make sure the end comment is picked up also.
   syn match doxygenErrorComment contained +\*/+
@@ -138,14 +138,6 @@ endif
     syn match doxygenStartSkip +^\s*\*[^/]+me=e-1 contained nextgroup=doxygenStartSpecial,doxygenFindBriefSpecial,doxygenStartSkip,doxygenPage,doxygenBody skipwhite skipnl
     syn match doxygenStartSkip +^\s*\*$+ contained nextgroup=doxygenStartSpecial,doxygenFindBriefSpecial,doxygenStartSkip,doxygenPage,doxygenBody skipwhite skipnl
   endif
-
-  " Match an [@\]brief so that it moves to body-mode.
-  "
-  "
-  " syn match doxygenBriefLine  contained
-  syn match doxygenBriefSpecial contained +[@\\]+ nextgroup=doxygenBriefWord skipwhite
-  syn region doxygenFindBriefSpecial start=+[@\\]brief\>+ end=+\(\n\s*\*\=\s*\([@\\]\([npcbea]\>\|em\>\|ref\>\|link\>\|f\$\|[$\\&<>#]\)\@!\)\|\s*$\)\@=+ keepend contains=doxygenBriefSpecial nextgroup=doxygenBody keepend skipwhite skipnl contained
-
 
   " Create the single word matching special identifiers.
 
@@ -178,7 +170,9 @@ endif
   " Match parameters and retvals (highlighting the first word as special).
   syn match doxygenParamDirection contained "\v\[(\s*in>((]\s*\[|\s*,\s*)out>)=|out>((]\s*\[|\s*,\s*)in>)=)\]" nextgroup=doxygenParamName skipwhite
   syn keyword doxygenParam contained param nextgroup=doxygenParamName,doxygenParamDirection skipwhite
-  syn match doxygenParamName contained +[A-Za-z0-9_:]\++ nextgroup=doxygenSpecialMultilineDesc skipwhite
+  " added skipnl to extend paramname's match if paramname is on one line
+  " and it's description on the next one
+  syn match doxygenParamName contained +[A-Za-z0-9_:]\++ nextgroup=doxygenSpecialMultilineDesc skipwhite skipnl
   syn keyword doxygenRetval contained retval throw exception nextgroup=doxygenParamName skipwhite
 
   " Match one line identifiers.
@@ -258,6 +252,7 @@ endif
   " Continue until an 'empty' line (can contain a '*' continuation) or until the
   " next whole-line @ command \ command.
   syn region doxygenSpecialMultilineDesc  start=+.\++ skip=+^\s*\(\*/\@!\s*\)\=\(\<\|[@\\]\<\([npcbea]\>\|em\>\|ref\|link\>\>\|f\$\|[$\\&<>#]\)\|[^ \t\\@*]\)+ end=+^+ contained contains=doxygenSpecialContinueComment,doxygenSmallSpecial,doxygenHyperLink,doxygenHashLink,@doxygenHtmlGroup,@Spell  skipwhite keepend
+  syn region doxygenBriefLine             start=+.\++ skip=+^\s*\(\*/\@!\s*\)\=\(\<\|[@\\]\<\([npcbea]\>\|em\>\|ref\|link\>\>\|f\$\|[$\\&<>#]\)\|[^ \t\\@*]\)+ end=+^+ contained contains=doxygenSpecialContinueComment,doxygenSmallSpecial,doxygenHyperLink,doxygenHashLink,@doxygenHtmlGroup,@Spell  skipwhite keepend
   syn match doxygenSpecialContinueComment contained +^\s*\*/\@!\s*+ nextgroup=doxygenSpecial skipwhite
 
   " Handle special cases  'bold' and 'group'

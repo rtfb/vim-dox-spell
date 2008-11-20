@@ -8,6 +8,9 @@
  * baz
  * xyzzy
  *
+ * \param ooo
+ * The three o's.
+ *
  * \retval NULL         Error has occurred. Foo.
  * \retval Otherwise    Magic pointer. Foo.
  */
