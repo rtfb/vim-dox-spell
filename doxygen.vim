@@ -1,4 +1,4 @@
-" DoxyGen syntax hilighting extension for c/c++/idl/java
+" DoxyGen syntax highlighting extension for c/c++/idl/java
 " Language:     doxygen on top of c, cpp, idl, java
 " Maintainer:   Michael Geddes <vimmer@frog.wheelycreek.net>
 " Author:       Michael Geddes
@@ -30,7 +30,7 @@
 " also be set to any highlight attribute. Alternatively, a highlight for doxygenCodeWord
 " can be used to override it.
 "
-" By default, highlighting is done assumng you have the JAVADOC_AUTOBRIEF
+" By default, highlighting is done assuming you have the JAVADOC_AUTOBRIEF
 " setting turned on in your Doxygen configuration.  If you don't, you
 " can set the variable g:doxygen_javadoc_autobrief to 0 to have the
 " highlighting more accurately reflect the way Doxygen will interpret your
@@ -52,7 +52,7 @@ let s:cpo_save = &cpo
 try
   set cpo&vim
 
-  " Start of Doxygen syntax hilighting:
+  " Start of Doxygen syntax highlighting:
   "
 
   " C/C++ Style line comments
@@ -63,7 +63,7 @@ try
 
   " Single line brief followed by multiline comment.
   syn region doxygenComment2 start=+/\*\(\*/\)\@![*!]+ end=+\*/+ contained contains=doxygenSyncStart2,doxygenStart2,doxygenTODO keepend fold
-  " This helps with sync-ing as for some reason, syncing behaves differently to a normal region, and the start pattern does not get matched.
+  " This helps with syncing as for some reason, syncing behaves differently to a normal region, and the start pattern does not get matched.
   syn match doxygenSyncStart2 +[^*/]+ contained nextgroup=doxygenBody,doxygenPrev,doxygenStartSpecial,doxygenSkipComment,doxygenStartSkip2 skipwhite skipnl
 
   " Skip empty lines at the start for when comments start on the 2nd/3rd line.
@@ -97,7 +97,7 @@ try
 
   endif
 
-  " This helps with sync-ing as for some reason, syncing behaves differently to a normal region, and the start pattern does not get matched.
+  " This helps with syncing as for some reason, syncing behaves differently to a normal region, and the start pattern does not get matched.
   syn match doxygenSyncStart +\ze[^*/]+ contained nextgroup=doxygenBrief,doxygenPrev,doxygenStartSpecial,doxygenFindBriefSpecial,doxygenStartSkip,doxygenPage skipwhite skipnl
 
   " These allow the skipping of comment continuation '*' characters.
@@ -228,7 +228,7 @@ endif
   syn match doxygenLinkRest +[^*@\\]\|\*/\@!\|[@\\]\(endlink\>\)\@!+ contained skipnl nextgroup=doxygenLinkRest,doxygenContinueLinkComment
   syn match doxygenContinueLinkComment contained +^\s*\*\=[^/]+me=e-1 nextgroup=doxygenLinkRest
   syn match doxygenLinkError "\*/" contained
-  " #Link hilighting.
+  " #Link highlighting.
   syn match doxygenHashLink /\([a-zA-Z_][0-9a-zA-Z_]*\)\?#\(\.[0-9a-zA-Z_]\@=\|[a-zA-Z0-9_]\+\|::\|()\)\+/ contained contains=doxygenHashSpecial
   syn match doxygenHashSpecial /#/ contained
   syn match doxygenHyperLink /\(\s\|^\s*\*\?\)\@<=\(http\|https\|ftp\):\/\/[-0-9a-zA-Z_?&=+#%/.!':;@]\+/ contained
@@ -262,7 +262,7 @@ endif
   syn keyword doxygenGroup contained group nextgroup=doxygenGroupName skipwhite
   syn keyword doxygenGroupName contained +\k\++ nextgroup=doxygenSpecialOnelineDesc skipwhite
 
-  " Handle special symbol identifiers  @$, @\, @$ etc
+  " Handle special symbol identifiers  @$, @\, @$ etc.
   syn match doxygenSymbol contained +[$\\&<>#n]+
 
   " Simplistic handling of formula regions
@@ -275,7 +275,7 @@ endif
   syn region doxygenFormula contained matchgroup=doxygenFormulaEnds start=+f\[+ end=+[@\\]f]+ contains=doxygenFormulaSpecial,doxygenFormulaOperator,doxygenAtom
   syn region doxygenAtom contained transparent matchgroup=doxygenFormulaOperator start=+{+ end=+}+ contains=doxygenAtom,doxygenFormulaSpecial,doxygenFormulaOperator
 
-  " Add TODO hilighting.
+  " Add TODO highlighting.
   syn keyword doxygenTODO contained TODO README XXX FIXME
 
   " Supported HTML subset.  Not perfect, but okay.
