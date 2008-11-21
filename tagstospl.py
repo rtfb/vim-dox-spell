@@ -1,4 +1,18 @@
 
+# This software is in public domain. It is intended to be customized by
+# its nature. This program is distributed in the hope that it will be
+# useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# Please report bugs in VimDoxSpell to Vytautas.Shaltenis@gmail.com.
+#
+# VimDoxSpell's home page is at
+# <http://rtfb.gamedev.lt/projects/vim-dox-spell/>.
+#
+# MAINTAINER: Vytautas Saltenis <Vytautas.Shaltenis@gmail.com>
+#
+# Copyright (C) 2008, Vytautas Saltenis
+
 import os
 import sys
 import xml.dom.minidom
