@@ -16,8 +16,6 @@
  */
 char* magick (char *pPtr);
 
-void gazonk ();
-
 void gazonk ()
 {
     return
