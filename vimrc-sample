@@ -1,0 +1,15 @@
+
+" Use tags! (I generate with exuberant ctags)
+set tags+=tags;/
+
+" Turn on spell checking (if you don't check spelling, you suck)
+set spell
+
+" I use two languages: Lithuanian and English. But I also want to add
+" a special pseudo-language to contain identifiers extracted from tags
+" file (this will eliminate false hits like printf).
+set spelllang=lt,en,fromtags
+
+" Autoload doxygen highlighting
+let g:load_doxygen_syntax=1
+

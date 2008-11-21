@@ -1,0 +1,15 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+DEF_BAR	c-files/td.cpp	27;"	d	file:
+DEF_FOO	c-files/td.cpp	26;"	d	file:
+DEF_GOO	c-files/td.cpp	28;"	d	file:
+Strukture	c-files/plain.c	/^struct Strukture$/;"	s	file:
+gazonk	c-files/td.cpp	/^void gazonk ()$/;"	f
+membah	c-files/plain.c	/^    int membah;$/;"	m	struct:Strukture	file:
+myApi_DoTheMagic	c-files/plain.c	/^void myApi_DoTheMagic ()$/;"	f
+myApi_Fubar	c-files/plain.c	/^void myApi_Fubar ()$/;"	f
+myApi_SpecialPrintf	c-files/plain.c	/^void myApi_SpecialPrintf ()$/;"	f

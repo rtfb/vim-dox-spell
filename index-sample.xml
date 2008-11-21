@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='iso-8859-1' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.4.7">
+  <compound refid="group__api___thread_handling_functions" kind="group"><name>api_ThreadHandlingFunctions</name>
+    <member refid="group__api___thread_handling_functions_1g9fd627729d1b2ff20be553a0eba5e541" kind="function"><name>ThreadInit</name></member>
+    <member refid="group__api___thread_handling_functions_1g7d20464132f7bb981be576b95970726a" kind="function"><name>ThreadKill</name></member>
+    <member refid="group__api___thread_handling_functions_1g963f51642413712975c14b37a436899c" kind="function"><name>GetThreadId</name></member>
+  </compound>
+  <compound refid="group__api___misc_functions" kind="group"><name>api_MiscFunctions</name>
+    <member refid="group__api___misc_functions_1g610a7b7a7b2fb7bf9b7845a187006e0e" kind="function"><name>InitializeLogging</name></member>
+    <member refid="group__api___misc_functions_1g2a2a7235b39c9cfcc33d46f89c4e79b0" kind="function"><name>Register</name></member>
+    <member refid="group__api___misc_functions_1g6604e93c6fb17c314a75ac8b01d8a98c" kind="function"><name>QSortElements</name></member>
+  </compound>
+  <compound refid="group__api___string_handling_functions" kind="group"><name>api_StringHandlingFunctions</name>
+    <member refid="group__api___string_handling_functions_1gcdf72820268b9f21491fd6829e84354e" kind="function"><name>StrCopy</name></member>
+    <member refid="group__api___string_handling_functions_1g8e2f491732d8ac14a155f0bdd4419c98" kind="function"><name>StrTrimLeft</name></member>
+    <member refid="group__api___string_handling_functions_1gea4d69c41862f4a17066aee8c4d7f913" kind="function"><name>StrTrimRight</name></member>
+    <member refid="group__api___string_handling_functions_1g88c3d05975d48516596de0a54ec094c0" kind="function"><name>StrReplaceChar</name></member>
+    <member refid="group__api___string_handling_functions_1g6dcccaf30f68a2919c6dc4ebdbac2190" kind="function"><name>StrBackSlashesToSlashes</name></member>
+    <member refid="group__api___string_handling_functions_1g697850dad138bb2956b22fb2c265e60f" kind="function"><name>StrSlashesToBackSlashes</name></member>
+    <member refid="group__api___string_handling_functions_1gc6b21009289a4bdd94c88009b3fe8ad3" kind="function"><name>StrGetCharCount</name></member>
+    <member refid="group__api___string_handling_functions_1g3dde8e386007cb46012ab1473d7c17af" kind="function"><name>StrFindChar</name></member>
+    <member refid="group__api___string_handling_functions_1gc117574ff26cbd77b251429751bc601d" kind="function"><name>StrRFindChar</name></member>
+    <member refid="group__api___string_handling_functions_1g162d74834651940ed0b349bd2d564d98" kind="function"><name>StrFindStr</name></member>
+    <member refid="group__api___string_handling_functions_1g280e034a42f35e3eb701b420bef4cc19" kind="function"><name>StrIsSpace</name></member>
+    <member refid="group__api___string_handling_functions_1g2394431a3d3cfc155388782d0719c983" kind="function"><name>StrIsDigit</name></member>
+    <member refid="group__api___string_handling_functions_1gcecede79f2ee1b55bfd2fabf2dfecd21" kind="function"><name>StrIsAlpha</name></member>
+    <member refid="group__api___string_handling_functions_1ge6f6ef5e373b5909f51dde3e116807ed" kind="function"><name>StrIsLower</name></member>
+    <member refid="group__api___string_handling_functions_1g9c46ae94f59818037d9cbfcf6a76c03f" kind="function"><name>StrIsUpper</name></member>
+    <member refid="group__api___string_handling_functions_1gb8d2dd14e43e0dd3a77e730a9bbcf426" kind="function"><name>StrIsGraph</name></member>
+    <member refid="group__api___string_handling_functions_1g91d68ba76ecc8949bdcd0a42760a6452" kind="function"><name>StrToNumber</name></member>
+  </compound>
+  <compound refid="group__api___file_system_handling_functions" kind="group"><name>api_FileSystemHandlingFunctions</name>
+    <member refid="group__api___file_system_handling_functions_1g69cf791dd02f8395dfbe0f6ce9ff5edb" kind="function"><name>GetCurrentDirectory</name></member>
+    <member refid="group__api___file_system_handling_functions_1g86da9fd27c31e718e00f1146d6c1820c" kind="function"><name>SetCurrentDirectory</name></member>
+    <member refid="group__api___file_system_handling_functions_1gd9a40d6008c4ace2369e93aaace385f4" kind="function"><name>ChangeDir</name></member>
+    <member refid="group__api___file_system_handling_functions_1ge99940c841a0b2bf63cea751d61ceb94" kind="function"><name>RestoreDir</name></member>
+    <member refid="group__api___file_system_handling_functions_1g3020ef2ee73d5df7d2af514408de5849" kind="function"><name>IsDirectory</name></member>
+    <member refid="group__api___file_system_handling_functions_1g8e1605b8d07c505cd8741a63a2761d10" kind="function"><name>FileExist</name></member>
+    <member refid="group__api___file_system_handling_functions_1g14b0181849f4387c777bbbbe3614096d" kind="function"><name>GetOSTempDir</name></member>
+    <member refid="group__api___file_system_handling_functions_1g42be5c681a2a316a936b7c14ea724bb0" kind="function"><name>CreateDirectory</name></member>
+    <member refid="group__api___file_system_handling_functions_1g1ccd73f7b54987f4c6616aadb9cae94e" kind="function"><name>CreateTempDir</name></member>
+    <member refid="group__api___file_system_handling_functions_1ge23ff7216c9fc23d3730b77c8c19ffff" kind="function"><name>DeleteTempDir</name></member>
+    <member refid="group__api___file_system_handling_functions_1geafc77de96c6942e9ef26672ae55265e" kind="function"><name>CopyFile</name></member>
+    <member refid="group__api___file_system_handling_functions_1g8b8740a458dd91e42241719fdaccf191" kind="function"><name>GetFullPath</name></member>
+    <member refid="group__api___file_system_handling_functions_1ga8ae96f492ace80d4752aa64a1361528" kind="function"><name>SolveFullPathName</name></member>
+    <member refid="group__api___file_system_handling_functions_1g67f2b100fc2cf3f82169f5ba9023474e" kind="function"><name>SplitPath</name></member>
+    <member refid="group__api___file_system_handling_functions_1g99c46dcda4a911c9d232596a4be30f16" kind="function"><name>MakePath</name></member>
+    <member refid="group__api___file_system_handling_functions_1gea35acea832b98d51768323e801a310f" kind="function"><name>SplitFileName</name></member>
+    <member refid="group__api___file_system_handling_functions_1g4fe7d2ec1fba1c5e64fed2f22957dcf5" kind="function"><name>MakeFileName</name></member>
+  </compound>
+</doxygenindex>
+
