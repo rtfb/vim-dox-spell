@@ -7,11 +7,11 @@ VimDoxSpell is a sample program and a collection of sample files to make
 your Vim editor be nice^H^H^H^H VERY nice about doxygen comments in your
 source files.
 
-It contains a patch to a doxygen.vim script that comes with Vim itself.
-The patch fixed some problems I had. Having doxygen comment highlighting
+It contains a patched doxygen.vim script that comes with Vim itself.
+The patch fixes some problems I had. Having doxygen comment highlighting
 fixed, this package aims to solve another frequent problem in source code
 editing: spell checker's false positives on program identifiers. This is
-solved by converting the tags file into Vim's spelling dictionary.
+solved by converting the tags file into additional Vim's spelling dictionary.
 
 This package is intended to be an "almost working" sample with exhaustive
 documentation. The "almost" part comes from the nature of the problem at
