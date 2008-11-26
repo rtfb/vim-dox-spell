@@ -123,7 +123,7 @@ def writeThings (homeDir, things):
     # The following command line calls Vim to generate the binary
     # dictionary file it will actually be using, not the plain text
     # one we've just written with writeWordList.
-    cmd = 'vim -cmd ' + '":mkspell! %s"' % (dictFile) + ' --cmd ":q"'
+    cmd = 'vim --cmd ' + '":mkspell! %s"' % (dictFile) + ' --cmd ":q"'
     os.system (cmd)
     print 'spl generated.'
 
