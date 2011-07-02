@@ -1,7 +1,7 @@
 
 VimDoxSpell
 ===========
-         Current Web home: http://rtfb.gamedev.lt/projects/vim-dox-spell/
+         Current Web home: http://rtfb.lt/projects/vim-dox-spell/
 
 VimDoxSpell is a sample program and a collection of sample files to make
 your Vim editor be nice^H^H^H^H VERY nice about doxygen comments in your
@@ -30,7 +30,7 @@ well met, not to mention fan-mail :-)
 Please report bugs in VimDoxSpell to Vytautas.Shaltenis@gmail.com.
 
 VimDoxSpell's home page is at
-<http://rtfb.gamedev.lt/projects/vim-dox-spell/>.
+<http://rtfb.lt/projects/vim-dox-spell/>.
 
 MAINTAINER: Vytautas Saltenis <Vytautas.Shaltenis@gmail.com>
 

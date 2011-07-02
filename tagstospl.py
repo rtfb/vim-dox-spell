@@ -7,7 +7,7 @@
 # Please report bugs in VimDoxSpell to Vytautas.Shaltenis@gmail.com.
 #
 # VimDoxSpell's home page is at
-# <http://rtfb.gamedev.lt/projects/vim-dox-spell/>.
+# <http://rtfb.lt/projects/vim-dox-spell/>.
 #
 # MAINTAINER: Vytautas Saltenis <Vytautas.Shaltenis@gmail.com>
 #
