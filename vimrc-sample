@@ -1,4 +1,8 @@
 
+" We speak UTF-8 on this planet
+set encoding=utf-8
+set fileencoding=utf-8
+
 " Use tags! (I generate with exuberant ctags)
 set tags+=tags;/
 
@@ -12,4 +16,3 @@ set spelllang=lt,en,fromtags
 
 " Autoload doxygen highlighting
 let g:load_doxygen_syntax=1
-
