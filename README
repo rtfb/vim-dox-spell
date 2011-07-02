@@ -55,10 +55,9 @@ extend your dictionary with the names of groups of your functions. If your
 documentation does not rely on explicit grouping, you can edit the script
 to skip this part.
 
-Edit the tagstospl.py script. Near the top of the file, there are two
-variables that need to be set: paths to your tags and index.xml files.
-After you're done, incorporate a call to this script into your build
-process, right after the call to doxygen.
+Call tagstospl.py script with paths to your tags and index.html files. If you
+wish, incorporate a call to this script into your build process, right after
+the call to doxygen.
 
 You're done! You can now launch your beloved editor and happily check the
 spelling of your documentation. No more false positives!
@@ -91,4 +90,3 @@ tagstospl.py: the smart part of this package. A script to generate the
               dictionary to be used to eliminate false positives.
 
 c-files/: directory with test/sample C files. The "code base".
-
