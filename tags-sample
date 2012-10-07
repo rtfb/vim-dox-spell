@@ -13,3 +13,19 @@ membah	c-files/plain.c	/^    int membah;$/;"	m	struct:Strukture	file:
 myApi_DoTheMagic	c-files/plain.c	/^void myApi_DoTheMagic ()$/;"	f
 myApi_Fubar	c-files/plain.c	/^void myApi_Fubar ()$/;"	f
 myApi_SpecialPrintf	c-files/plain.c	/^void myApi_SpecialPrintf ()$/;"	f
+APIENTRY	/usr/include/GL/gl.h	105;"	d
+APIENTRY	/usr/include/GL/glext.h	37;"	d
+APIENTRY	/usr/include/GL/glxext.h	37;"	d
+APIENTRYP	/usr/include/GL/gl.h	110;"	d
+APIENTRYP	/usr/include/GL/glext.h	40;"	d
+APIENTRYP	/usr/include/GL/glxext.h	40;"	d
+DRI_INTERFACE_H	/usr/include/GL/internal/dri_interface.h	41;"	d
+FGAPI	/usr/include/GL/freeglut_std.h	55;"	d
+FGAPI	/usr/include/GL/freeglut_std.h	67;"	d
+FGAPI	/usr/include/GL/freeglut_std.h	69;"	d
+FGAPI	/usr/include/GL/freeglut_std.h	98;"	d
+FGAPIENTRY	/usr/include/GL/freeglut_std.h	56;"	d
+FGAPIENTRY	/usr/include/GL/freeglut_std.h	80;"	d
+FGAPIENTRY	/usr/include/GL/freeglut_std.h	99;"	d
+FREEGLUT	/usr/include/GL/freeglut_std.h	106;"	d
+FREEGLUT_VERSION_2_0	/usr/include/GL/freeglut_std.h	108;"	d

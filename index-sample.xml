@@ -10,6 +10,9 @@
     <member refid="group__api___misc_functions_1g2a2a7235b39c9cfcc33d46f89c4e79b0" kind="function"><name>Register</name></member>
     <member refid="group__api___misc_functions_1g6604e93c6fb17c314a75ac8b01d8a98c" kind="function"><name>QSortElements</name></member>
   </compound>
+  <compound refid="group__api___misc_functions" kind="group"><name>grp_SetupScene</name>
+    <member refid="group__api___misc_functions_1g610a7b7a7b2fb7bf9b7845a187006e0e" kind="function"><name>foo</name></member>
+  </compound>
   <compound refid="group__api___string_handling_functions" kind="group"><name>api_StringHandlingFunctions</name>
     <member refid="group__api___string_handling_functions_1gcdf72820268b9f21491fd6829e84354e" kind="function"><name>StrCopy</name></member>
     <member refid="group__api___string_handling_functions_1g8e2f491732d8ac14a155f0bdd4419c98" kind="function"><name>StrTrimLeft</name></member>
