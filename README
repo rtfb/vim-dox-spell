@@ -41,9 +41,12 @@ Using VimDoxSpell
 
 This package is intended to be a sample and a guide. Start by examining
 vimrc-sample and setting up your Vim editor. As a part of configuration,
-copy doxygen.vim to Vim's syntax directory (on my machine it's located at
-/usr/share/vim/vim71/syntax/). Don't forget to backup the original! My
-changes for this file have not yet been reviewed by the maintainer of the
+copy doxygen.vim to Vim's syntax directory, i.e. do this:
+
+$ mkdir -p ~/.vim/syntax
+$ cp doxygen.vim ~/.vim/syntax
+
+My changes for this file have not yet been reviewed by the maintainer of the
 syntax script.
 
 Next, figure out how do you want to generate tags for your code base.
